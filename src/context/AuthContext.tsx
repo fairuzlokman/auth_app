@@ -14,14 +14,9 @@ import type { AuthContextValue, User } from "../types";
 const USERS_KEY = "@auth_app/users";
 const SESSION_KEY = "@auth_app/session";
 
-// Passwords live next to the user record in plain text. That's acceptable for a
-// local demo with no backend; in production the app would only ever hand the
-// password to a server that hashes it and never store it on the device.
 type StoredUser = User & { password: string };
 
-// Enough delay for the loading states to actually be visible, standing in for
-// the network round-trip a real login would make.
-const FAKE_LATENCY_MS = 600;
+const FAKE_LATENCY_MS = 500;
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -87,7 +82,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 		setUser(session);
 	}
 
-	// Nothing below closes over state, so user/isRestoring are the only real deps.
 	const value = useMemo<AuthContextValue>(
 		() => ({ user, isRestoring, login, signup, logout }),
 		[user, isRestoring],
