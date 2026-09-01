@@ -87,7 +87,5 @@ argon2) and would never persist it on the device at all.
 
 - No backend; accounts exist only on the device that created them.
 - Passwords unhashed, as above.
-- Tests cover the validation helpers only — with more time I'd add React Native Testing
-  Library coverage for the context's login/signup branches.
 - No "forgot password" or account deletion.
 - Light mode only.
