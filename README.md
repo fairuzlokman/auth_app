@@ -83,9 +83,6 @@ enumerate which email addresses have accounts.
 with no server. A real app would send the password to a backend that hashes it (bcrypt or
 argon2) and would never persist it on the device at all.
 
-**There's an artificial 600ms delay** on login and signup, standing in for a network call
-so the loading states are actually visible.
-
 ## Known limitations
 
 - No backend; accounts exist only on the device that created them.
