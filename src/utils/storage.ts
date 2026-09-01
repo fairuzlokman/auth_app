@@ -9,7 +9,6 @@ export async function getJSON<T>(key: string): Promise<T | null> {
   try {
     return JSON.parse(raw) as T;
   } catch {
-    // A value we can't parse is worse than no value — drop it and start clean.
     await AsyncStorage.removeItem(key);
     return null;
   }

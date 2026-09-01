@@ -20,7 +20,7 @@ Prerequisites: Node 20+ and npm.
 
 ```bash
 git clone <repo-url>
-cd auth-app
+cd auth_app
 npm install
 npx expo start
 ```
